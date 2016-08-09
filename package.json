@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "webpack-dev-server --inline --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
-    "start":"simple-server public 3000"
+    "start":"simple-server"
   },
   "dependencies": {
     "vue": "^1.0.0",
