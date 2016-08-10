@@ -1,6 +1,6 @@
-# public
+# com.juscilan
 
-> A Vue.js project
+> A Vue.js project juscilan.com
 
 ## Build Setup
 
