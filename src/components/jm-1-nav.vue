@@ -18,7 +18,6 @@
 
 </template>
 
-
 <script>
 
 import {scroll} from './jm-scrool'

@@ -1,12 +1,12 @@
 <template>
 <div id="modal1" class="modal">
     <div class="modal-content">
-        <h4 >{{myData.modalCabecalho}}</h4>
-        <p>{{myData.modalCorpo}}</p>
-        <input id="senhaModal" autofocus type="password" ng-show="myData.vlPasswordVisivel" ng-model="myData.vlPassword" >
+        <h4 >Atenção</h4>
+        <p>Por gentileza digite sua senha:</p>
+        <input id="senhaModal" autofocus type="password" v-model="senha" >
     </div>
     <div class="modal-footer">
-        <button id="closeModal" type="submit" class="modal-action modal-close waves-effect waves-green btn" ng-click="myData.ok(item, $event)">Ok</button>
+        <button id="closeModal" class="modal-action modal-close waves-effect waves-green btn" @click="baixar()" >Ok</button>
     </div>
 </div>
 </template>
@@ -15,12 +15,30 @@
 export default {
   data () {
     return {
-      // note: changing this line won't causes changes
-      // with hot-reload because the reloaded component
-      // preserves its current state and we are modifying
-      // its initial state.
-      msg: 'Hello Vue!'
+      senha: ''
     }
-  }
+  },
+
+    ready () {
+
+        jQuery('#modal1').openModal();
+    },
+
+    methods:{
+      baixar(){
+
+        let address = "/arquivos/Juscilan_Moreto-11-98167-1595.pdf/" + this.senha;
+        
+        this.$http.get(address).then((response) => {
+            this.$set('visitors', JSON.parse(response.body));
+            
+        }, (response) => {
+            window.console.log('Erro ao realizar operação.');
+        });        
+        
+        jQuery('#modal1').closeModal();
+      }
+    }
+
 }
 </script>

@@ -1,5 +1,4 @@
 export const scroll = function(element){
-    console.log(element)
         var $doc = jQuery('html, body');
         jQuery('.' + element).click(function() {
             $doc.animate({
