@@ -42,7 +42,7 @@
         </div> 
     </div>
     <div>
-        <div class="center"><a class="white-text" href="/#corpo">Topo</a></div>
+        <div class="center"><a class="white-text scrollSuave" href="#nav">Topo</a></div>
     </div>
     <div class="footer-copyright">
         <div class="container">
@@ -56,6 +56,8 @@
 
 
 <script>
+
+import {scroll} from './jm-scrool'
 
 export default {
 
@@ -73,6 +75,17 @@ export default {
     },  
 
     ready () {
+        
+    scroll("scrollSuave")
+/*
+        var $doc = $('html, body');
+        $('.scrollSuave').click(function() {
+            $doc.animate({
+                scrollTop: $( $.attr(this, 'href') ).offset().top
+            }, 1000);
+            return false;
+        });*/
+
         this.$http.get('localhost:3000/counter').then((response) => {
             window.console.log(response.body);
             //this.$set('visitors', JSON.parse(response.body));
