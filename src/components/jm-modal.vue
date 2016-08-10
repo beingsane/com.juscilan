@@ -21,7 +21,7 @@ export default {
 
     ready () {
 
-        jQuery('#modal1').openModal();
+        
     },
 
     methods:{
@@ -30,7 +30,7 @@ export default {
         let address = "/arquivos/Juscilan_Moreto-11-98167-1595.pdf/" + this.senha;
         
         this.$http.get(address).then((response) => {
-            this.$set('visitors', JSON.parse(response.body));
+            //this.$set('visitors', JSON.parse(response.body));
             
         }, (response) => {
             window.console.log('Erro ao realizar operação.');

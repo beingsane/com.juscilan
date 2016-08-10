@@ -9,25 +9,25 @@
                 <form class="col s12" >
                   <div class="row">
                       <div class="input-field col s12">
-                        <input id="name"  type="text" class="validate" ng-model="myData.name">
+                        <input id="name"  type="text" class="validate" v-model="name">
                         <label for="first_name">Nome</label>
                       </div>
                   </div>
                   <div class="row">
                       <div class="input-field col s12">
-                        <input id="email" type="text" class="validate" ng-model="myData.email">
+                        <input id="email" type="text" class="validate" v-model="email">
                         <label for="email">Email</label>
                       </div>
                   </div>
                   <div class="row">
                       <div class="input-field col s12">
-                        <input id="mensagem" type="text" class="validate" ng-model="myData.mensagem">
+                        <input id="mensagem" type="text" class="validate" v-model="mensagem">
                         <label for="first_name">Mensagem</label>
                       </div>
                   </div>
                   <div class="row"> 
-                      <button ng-click="myData.doClick(item, $event)" class="btn waves-effect waves-light" 
-                        type="submit" name="action">Enviar<i class="material-icons right">send</i>
+                      <button @click="enviar()" class="btn waves-effect waves-light" 
+                         name="action">Enviar<i class="material-icons right">send</i>
                       </button>
                   </div>
                 </form>
@@ -41,11 +41,25 @@
 export default {
   data () {
     return {
-      // note: changing this line won't causes changes
-      // with hot-reload because the reloaded component
-      // preserves its current state and we are modifying
-      // its initial state.
-      msg: 'Hello Vue!'
+      name: ''
+      ,email: ''
+      ,mensagem: ''
+    }
+  },
+
+  methods:{
+
+    enviar(){
+
+        var dados = 'dados=' + JSON.stringify(this.data);
+
+        this.$http.post('/counter',dados).then((response) => {
+            window.console.log(response.body);
+            
+        }, (response) => {
+            window.console.log('Erro ao realizar operação.');
+        });      
+
     }
   }
 }
