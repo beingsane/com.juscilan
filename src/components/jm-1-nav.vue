@@ -5,7 +5,7 @@
         <a id="logo-container" href="/" class="brand-logo"><img src="https://media.licdn.com/mpr/mpr/shrink_100_100/p/7/005/08d/09b/109529d.jpg" class="circle bordabranca" alt="Juscilan Moreto" title="Juscilan Moreto"></a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
-            <li><a href="#" @click="baixar()">Curriculum em PDF</a></li>
+            <li><a href="#" @click="executa()">Curriculum em PDF</a></li>
             <li><a href="#contato" class="scrollSuave">Contato</a></li>
             <li><a href="#sobre" class="scrollSuave">  Sobre</a></li>
         </ul>
@@ -23,9 +23,24 @@
 import {scroll} from './jm-9-scrool'
 
 export default {
+
+    vuex:{
+              actions:{
+                  
+                  executa : function ({dispatch}) {
+                      let data = JSON.parse(JSON.stringify(this.$data));
+                      dispatch('ATUALIZA_MODAL',data)
+                      jQuery('#modal1').openModal();
+                  }
+              },
+
+   },
+
   data () {
     return {
-      msg: ''
+      titulo: 'Atenção'
+      ,mensagem :'Por gentileza digite sua senha:'
+      ,tipo :'DOWNLOAD'
     }
   },
     ready () {

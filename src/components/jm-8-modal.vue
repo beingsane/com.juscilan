@@ -1,12 +1,12 @@
 <template>
 <div id="modal1" class="modal">
     <div class="modal-content">
-        <h4 >Atenção</h4>
-        <p>Por gentileza digite sua senha:</p>
-        <input id="senhaModal" autofocus type="password" v-model="senha" >
+        <h4 >{{getValue.titulo}}</h4>
+        <p> {{getValue.mensagem}}</p>
+        <input id="senhaModal" v-show="inputvisible" autofocus type="password" v-model="senha" >
     </div>
     <div class="modal-footer">
-        <button id="closeModal" class="modal-action modal-close waves-effect waves-green btn" @click="baixar()" >Ok</button>
+        <button id="closeModal" class="modal-action modal-close waves-effect waves-green btn" @click="ok()" >Ok</button>
     </div>
 </div>
 </template>
@@ -15,14 +15,6 @@
 export default {
 
     vuex:{
-                actions:{
-                    
-                    executa : function ({dispatch}) {
-                        let data = JSON.parse(JSON.stringify(this.$data));
-                        dispatch('ATUALIZA_MODAL',data)
-                    }
-                },
-            
                 getters: {
                     getValue : store => store.Modal
                 
@@ -31,26 +23,39 @@ export default {
   ,
   data () {
     return {
-      senha: ''
+      titulo: ''
+      ,mensagem: ''
+      ,tipo: ''
+      ,senha:''
+      ,inputvisible:true
     }
   },
 
     ready () {
-
-        
+        this.data = this.getValue 
+        console.log(this.getValue.msg)
     },
 
     methods:{
-      baixar(){
+      ok(){
 
-        if(!this.senha)
-          return
+          if(this.tipo === 'DOWNLOAD'){
+                if(!this.senha)
+                return
 
-        let address = "/arquivos/Juscilan_Moreto-11-98167-1595.pdf/" + this.senha;
+                let address = "/arquivos/Juscilan_Moreto-11-98167-1595.pdf/" + this.senha;
 
-        window.location = address;
+                window.location = address;
 
-        jQuery('#modal1').closeModal();
+                jQuery('#modal1').closeModal();
+          }
+
+          if(this.tipo === 'WARNING'){
+
+
+          }
+
+
 
       }
     }

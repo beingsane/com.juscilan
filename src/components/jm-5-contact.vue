@@ -38,8 +38,27 @@
 
 <script>
 export default {
+
+    vuex:{
+              actions:{
+                  
+                  executa : function ({dispatch}) {
+                      let data = JSON.parse(JSON.stringify(this.$data));
+                      dispatch('ATUALIZA_MODAL',data)
+                      jQuery('#modal1').openModal();
+                  }
+              },
+
+   },
+
   data () {
     return {
+
+        data:{
+            titulo: 'Mensagem enviada'
+            ,mensagem :'Logo, logo entro em contato ;)'
+            ,tipo :'WARNING'
+        },
         
         dados:{
           name: ''
