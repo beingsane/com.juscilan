@@ -1,6 +1,5 @@
-import Vue from 'vue'
-import App from './App.vue'
-import VueResource from 'vue-resource'
+import Vue          from 'vue'
+import VueResource  from 'vue-resource'
 
 import JmNav        from './components/jm-1-nav.vue'
 import JmTopBanner  from './components/jm-2-top-banner.vue'
