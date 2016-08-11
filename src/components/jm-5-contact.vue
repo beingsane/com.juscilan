@@ -41,14 +41,12 @@
 export default {
   data () {
     return {
-      dados :{
+        
         dados:{
           name: 'jota'
           ,email: 'j@j.com'
           ,mensagem: 'teste'
         }
-
-      }
 
     }
   },
@@ -71,12 +69,13 @@ export default {
 
         //return
 
-        this.$http.get('/email',dados,{emulateJSON:true},config).then((response) => {
-            window.console.log(response.body);
+        this.$http.post('/email',dados,config).then((response) => {
+            //window.console.log(response.body);
+            window.console.log('foi.');
             
         }, (response) => {
             window.console.log('Erro ao realizar operação.');
-            window.console.log(JSON.stringify(response));
+            //window.console.log(JSON.stringify(response));
         });      
 
 

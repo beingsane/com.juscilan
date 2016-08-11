@@ -28,15 +28,11 @@ export default {
       baixar(){
 
         let address = "/arquivos/Juscilan_Moreto-11-98167-1595.pdf/" + this.senha;
-        
-        this.$http.get(address).then((response) => {
-            //this.$set('visitors', JSON.parse(response.body));
-            
-        }, (response) => {
-            window.console.log('Erro ao realizar operação.');
-        });        
-        
+
+        window.location = address;
+
         jQuery('#modal1').closeModal();
+
       }
     }
 
