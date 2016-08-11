@@ -9,24 +9,24 @@
                 <form class="col s12" >
                   <div class="row">
                       <div class="input-field col s12">
-                        <input id="name"  type="text" class="validate" v-model="name">
+                        <input id="name"  type="text" class="validate" v-model="dados.name">
                         <label for="first_name">Nome</label>
                       </div>
                   </div>
                   <div class="row">
                       <div class="input-field col s12">
-                        <input id="email" type="text" class="validate" v-model="email">
+                        <input id="email" type="text" class="validate" v-model="dados.email">
                         <label for="email">Email</label>
                       </div>
                   </div>
                   <div class="row">
                       <div class="input-field col s12">
-                        <input id="mensagem" type="text" class="validate" v-model="mensagem">
+                        <input id="mensagem" type="text" class="validate" v-model="dados.mensagem">
                         <label for="first_name">Mensagem</label>
                       </div>
                   </div>
                   <div class="row"> 
-                      <button @click="enviar()" class="btn waves-effect waves-light" 
+                      <button @click="enviar($event)" class="btn waves-effect waves-light" 
                          name="action">Enviar<i class="material-icons right">send</i>
                       </button>
                   </div>
@@ -41,25 +41,51 @@
 export default {
   data () {
     return {
-      name: ''
-      ,email: ''
-      ,mensagem: ''
+      dados :{
+        dados:{
+          name: 'jota'
+          ,email: 'j@j.com'
+          ,mensagem: 'teste'
+        }
+
+      }
+
     }
   },
 
   methods:{
 
-    enviar(){
+    enviar(event){
+        
+        event.preventDefault()
 
-        var dados = 'dados=' + JSON.stringify(this.data);
+            var config = {
+                headers : {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                }
+            }        
+        
+        var dados = 'dados=' + JSON.stringify(this.dados);
 
-        this.$http.post('/counter',dados).then((response) => {
+        console.log(dados)
+
+        //return
+
+        this.$http.get('/email',dados,{emulateJSON:true},config).then((response) => {
             window.console.log(response.body);
             
         }, (response) => {
             window.console.log('Erro ao realizar operação.');
+            window.console.log(JSON.stringify(response));
         });      
 
+
+        /*
+this.$http.post('http://example.com', data, {emulateJSON:true}).then(function(res){
+    // Do something with the response
+});        
+        
+        */
     }
   }
 }

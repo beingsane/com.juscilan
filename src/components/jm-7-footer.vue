@@ -78,8 +78,8 @@ export default {
 
         this.$http.get('/counter').then((response) => {
             window.console.log(response.body);
-            //this.$set('visitors', JSON.parse(response.body));
-            this.$set('visitors', JSON.parse({"_id":"5654a92235fd4b34180f04e2","visitors":460}));
+            this.$set('visitors', JSON.parse(response.body));
+            //this.$set('visitors', JSON.parse({"_id":"5654a92235fd4b34180f04e2","visitors":460}));
             
         }, (response) => {
             this.$set('visitors', JSON.parse('{"_id":"5654a92235fd4b34180f04e2","visitors":460}'));
