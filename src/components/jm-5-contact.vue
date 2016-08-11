@@ -64,26 +64,12 @@ export default {
         
         var dados = 'dados=' + JSON.stringify(this.dados);
 
-        console.log(dados)
-
-        //return
-
         this.$http.post('/email',dados,config).then((response) => {
-            //window.console.log(response.body);
             window.console.log('foi.');
             
         }, (response) => {
             window.console.log('Erro ao realizar operação.');
-            //window.console.log(JSON.stringify(response));
         });      
-
-
-        /*
-this.$http.post('http://example.com', data, {emulateJSON:true}).then(function(res){
-    // Do something with the response
-});        
-        
-        */
     }
   }
 }

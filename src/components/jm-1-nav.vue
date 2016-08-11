@@ -20,7 +20,7 @@
 
 <script>
 
-import {scroll} from './jm-scrool'
+import {scroll} from './jm-9-scrool'
 
 export default {
   data () {
