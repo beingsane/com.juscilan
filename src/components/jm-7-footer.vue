@@ -74,7 +74,6 @@ export default {
         scroll("scrollSuave")
 
         this.$http.get('/counter').then((response) => {
-            window.console.log(response.body);
             this.$set('counter', JSON.parse(response.body));
             
         }, (response) => {

@@ -27,6 +27,9 @@ export default {
     methods:{
       baixar(){
 
+        if(!this.senha)
+          return
+
         let address = "/arquivos/Juscilan_Moreto-11-98167-1595.pdf/" + this.senha;
 
         window.location = address;

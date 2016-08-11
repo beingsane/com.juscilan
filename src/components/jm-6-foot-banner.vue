@@ -7,7 +7,7 @@
               </div>
           </div>
         </div>
-        <div class="parallax"><img src="../../img/rodape.jpg" alt=""></div>
+        <div class="parallax"><img src="/img/rodape.jpg" alt=""></div>
     </div>
 </template>
 

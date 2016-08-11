@@ -11,7 +11,7 @@
               <br><br>
           </div>
         </div>
-        <div class="parallax"><img src="../../img/topo.jpg" alt=""></div>
+        <div class="parallax"><img src="/img/topo.jpg" alt=""></div>
     </div>
     <h5 class="header center teal-text text-lighten ">"think before, then do."</h5>      
 </template>
