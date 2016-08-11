@@ -19,6 +19,8 @@ export default {
               actions:{
                   
                   executa : function ({dispatch}) {
+                    
+                      this.$data.tipo = 'DOWNLOAD'
                       let data = JSON.parse(JSON.stringify(this.$data));
                       dispatch('OK_CLICK',data)
                   }
@@ -48,19 +50,8 @@ export default {
       ok(){
 
           this.executa()
-
-          if(this.getValue.tipo === 'DOWNLOAD'){
-                
-                if(!this.senha)
-                    return
-
-                let address = "/arquivos/Juscilan_Moreto-11-98167-1595.pdf/" + this.senha;
-
-                window.location = address;
-          }
-
           jQuery('#modal1').closeModal();
-s      }
+      }
     }
 
 }
