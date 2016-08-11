@@ -5,7 +5,7 @@ module.exports = {
   entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, './js/_source'),
-    publicPath: '/js/_source/',
+    publicPath: './js/_source/',
     filename: 'build.js'
   },
   resolveLoader: {

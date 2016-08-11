@@ -72,13 +72,13 @@ export default {
     ready () {
 
         scroll("scrollSuave")
-
+/*
         this.$http.get('/counter').then((response) => {
             this.$set('counter', JSON.parse(response.body));
             
         }, (response) => {
             window.console.log('Erro ao realizar operação.');
-        });
+        });*/
     }
 }
 </script>

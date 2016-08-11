@@ -13,6 +13,22 @@
 
 <script>
 export default {
+
+    vuex:{
+                actions:{
+                    
+                    executa : function ({dispatch}) {
+                        let data = JSON.parse(JSON.stringify(this.$data));
+                        dispatch('ATUALIZA_MODAL',data)
+                    }
+                },
+            
+                getters: {
+                    getValue : store => store.Modal
+                
+                }
+            }
+  ,
   data () {
     return {
       senha: ''

@@ -1,5 +1,6 @@
 import Vue          from 'vue'
 import VueResource  from 'vue-resource'
+import Vuex         from 'vuex'
 
 import JmNav        from './components/jm-1-nav.vue'
 import JmTopBanner  from './components/jm-2-top-banner.vue'
@@ -11,17 +12,37 @@ import JmFooter     from './components/jm-7-footer.vue'
 import Modal        from './components/jm-8-modal.vue'
 
 Vue.use(VueResource)
+Vue.use(Vuex)
+
+export const state = {
+
+   Modal:{}
+}
+
+//Define duas matations (Aconselhável separar num arquivo a parte)
+export const mutations = {
+
+    ATUALIZA_MODAL (state, obj) {
+      state.Modal = obj
+    },
+}
 
 new Vue({
   el: 'body',
   components: { 
-    JmNav
-    ,JmTopBanner 
-    ,JmColluns
-    ,JmMidBanner
-    ,JmContact
-    ,JmFootBanner
-    ,JmFooter
-    ,Modal        
-}
+                  JmNav
+                  ,JmTopBanner 
+                  ,JmColluns
+                  ,JmMidBanner
+                  ,JmContact
+                  ,JmFootBanner
+                  ,JmFooter
+                  ,Modal        
+              }
+  
+  ,store:  new Vuex.Store({
+                            state,
+                            mutations,
+                            strict: true // impede que altere o state diretamente, retirar em produção (Afeta Performance)
+                        })
 })
