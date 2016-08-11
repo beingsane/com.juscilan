@@ -41,6 +41,7 @@ export default {
       titulo: 'Atenção'
       ,mensagem :'Por gentileza digite sua senha:'
       ,tipo :'DOWNLOAD'
+      ,inputvisible:true
     }
   },
     ready () {

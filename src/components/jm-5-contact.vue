@@ -43,7 +43,7 @@ export default {
               actions:{
                   
                   executa : function ({dispatch}) {
-                      let data = JSON.parse(JSON.stringify(this.$data));
+                      let data = JSON.parse(JSON.stringify(this.$data.data));
                       dispatch('ATUALIZA_MODAL',data)
                       jQuery('#modal1').openModal();
                   }
@@ -55,15 +55,17 @@ export default {
     return {
 
         data:{
-            titulo: 'Mensagem enviada'
-            ,mensagem :'Logo, logo entro em contato ;)'
-            ,tipo :'WARNING'
+            titulo: ''
+            ,mensagem :''
+            ,tipo :''
+            ,inputvisible:false
         },
         
         dados:{
           name: ''
           ,email: ''
           ,mensagem: ''
+          
         }
 
     }
@@ -84,10 +86,22 @@ export default {
         var dados = 'dados=' + JSON.stringify(this.dados);
 
         this.$http.post('/email',dados,config).then((response) => {
-            window.console.log('foi.');
+            this.$data.data = {
+                titulo: 'Mensagem enviada'
+                ,mensagem :'Logo, logo entro em contato ;)'
+                ,tipo :'WARNING'
+                ,inputvisible:false
+            }
+            this.executa()
             
         }, (response) => {
-            window.console.log('Erro ao realizar operação.');
+            this.$data.data = {
+                titulo: 'Erro ao enviar'
+                ,mensagem :'Por gentileza tente novamente ;('
+                ,tipo :'WARNING'
+                ,inputvisible:false
+            }
+            this.executa()
         });      
     }
   }
