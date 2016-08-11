@@ -4,7 +4,6 @@
       <div id="contato" class="section" >
           <div class="row">
             <div class="col s12 center" >
-                <h3><i class="mdi-content-send black-text"></i></h3>
                 <h4>Contato</h4>
                 <form class="col s12" >
                   <div class="row">
