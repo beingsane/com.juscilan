@@ -4,9 +4,9 @@
   "author": "Juscilan <juscilan@gmail.com>",
   "private": true,
   "scripts": {
-    "dev": "webpack-dev-server --inline --hot",
-    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules && gulp",
-    "start": "simple-server"
+    "d": "webpack-dev-server --inline --hot",
+    "b": "cross-env NODE_ENV=production webpack --progress --hide-modules && gulp",
+    "s": "simple-server"
   },
   "dependencies": {
     "vue": "^1.0.0",
