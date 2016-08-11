@@ -33,6 +33,10 @@ export default {
                       jQuery('#modal1').openModal();
                   }
               },
+                getters: {
+                    getValue : store => store.Modal
+                
+                }              
 
    },
 

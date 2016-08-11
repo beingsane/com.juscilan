@@ -25,6 +25,9 @@ export const mutations = {
     ATUALIZA_MODAL (state, obj) {
       state.Modal = obj
     },
+    OK_CLICK (state, obj) {
+      state.Modal = obj
+    },    
 }
 
 new Vue({

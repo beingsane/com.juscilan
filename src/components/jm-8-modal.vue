@@ -15,6 +15,14 @@
 export default {
 
     vuex:{
+
+              actions:{
+                  
+                  executa : function ({dispatch}) {
+                      let data = JSON.parse(JSON.stringify(this.$data));
+                      dispatch('OK_CLICK',data)
+                  }
+              },        
                 getters: {
                     getValue : store => store.Modal
                 
@@ -39,27 +47,20 @@ export default {
     methods:{
       ok(){
 
-          if(getValue.tipo === 'DOWNLOAD'){
+          this.executa()
+
+          if(this.getValue.tipo === 'DOWNLOAD'){
+                
                 if(!this.senha)
-                return
+                    return
 
                 let address = "/arquivos/Juscilan_Moreto-11-98167-1595.pdf/" + this.senha;
 
                 window.location = address;
-
-                
           }
 
           jQuery('#modal1').closeModal();
-          /*
-          if(this.tipo === 'WARNING'){
-
-
-          }*/
-
-
-
-      }
+s      }
     }
 
 }
