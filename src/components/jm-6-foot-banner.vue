@@ -3,11 +3,11 @@
         <div class="section no-pad-bot">
           <div class="container">
               <div class="row center">
-                <h5 class="header col s12 light-image">Back End:{SqlServer,Oracle,MongoDB,Asp.NET MVC,Node,Python}</h5>
+                <h5 class="header col s12 light-image"> Nodejs, Asp.NET MVC,Python ...</h5>
               </div>
           </div>
         </div>
-        <div class="parallax"><img src="../../img/background1.jpg" alt=""></div>
+        <div class="parallax"><img src="../../img/rodape.jpg" alt=""></div>
     </div>
 </template>
 

@@ -1,5 +1,5 @@
 <template>
-    <h5 class="header center teal-text text-lighten hide-on-med-and-down">{ www.juscilan.com }</h5>
+    <h5 class="header center teal-text text-lighten hide-on-med-and-down"> www.juscilan.com </h5>
     <div id="index-banner" class="parallax-container">
         <div class="section no-pad-bot">
           <div class="container">
@@ -11,7 +11,7 @@
               <br><br>
           </div>
         </div>
-        <div class="parallax"><img src="../../img/background3.jpg" alt=""></div>
+        <div class="parallax"><img src="../../img/topo.jpg" alt=""></div>
     </div>
     <h5 class="header center teal-text text-lighten ">"think before, then do."</h5>      
 </template>

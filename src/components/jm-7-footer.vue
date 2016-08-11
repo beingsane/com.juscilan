@@ -6,13 +6,11 @@
                 <h5 id="sobre" class="white-text">Mais sobre mim...</h5>
                 <p class="grey-text text-lighten-4">
                     Meu nome é Juscilan Moreto, sou graduado em Análise e desenvolvimento de 
-                    sistemas pela Universidade Mogi das Cruzes,
-                    ajudei a desenvolver e implantar softwares em grandes empresas como Carrefour, 
-                    Alpargatas, Bematech,Leroy Merlin e PRODESP, possuo vasta experiência em testes, 
+                    sistemas, ajudei a desenvolver e implantar softwares em grandes empresas como Carrefour, 
+                    Alpargatas, Bematech, Leroy Merlin e PRODESP, possuo vasta experiência em testes, 
                     análise, modelagem, desenvolvimento dos mais variados tipos de sistemas. 
                     Focando no desenvolvimento de sistemas para Web/Intranet como Asp.NET MVC, C#, SqlServer e Oracle 
-                    e também tecnologias Full-Stack Javascript (MongoDB, Express.js, Angular.js e Node.js), atualmente estudando
-                    ioT (internet das coisas), implementando python no Raspberry / Arduino. 
+                    e também tecnologias Full-Stack Javascript (MongoDB, Express.js, Vue.js e Node.js).
                 </p>
                 </div>
                 <div class="col l3 s12">
@@ -46,7 +44,7 @@
         </div>
         <div class="footer-copyright">
             <div class="container">
-                <p class="center header col s12 light">Versão 3.0.0.0 - <span>{{visitors.visitors}}</span> </p>
+                <p class="center header col s12 light">Versão 3.0.0.0 - <span>{{counter.visitors}}</span> </p>
             </div>
         </div>
         
@@ -63,13 +61,12 @@ export default {
 
     data () {
     return {
-        visitors: {}
+        counter: {}
         }
     },
 
     methods: {
-        buscar: function()
-        {}
+
     },  
 
     ready () {
@@ -78,11 +75,9 @@ export default {
 
         this.$http.get('/counter').then((response) => {
             window.console.log(response.body);
-            this.$set('visitors', JSON.parse(response.body));
-            //this.$set('visitors', JSON.parse({"_id":"5654a92235fd4b34180f04e2","visitors":460}));
+            this.$set('counter', JSON.parse(response.body));
             
         }, (response) => {
-            this.$set('visitors', JSON.parse('{"_id":"5654a92235fd4b34180f04e2","visitors":460}'));
             window.console.log('Erro ao realizar operação.');
         });
     }

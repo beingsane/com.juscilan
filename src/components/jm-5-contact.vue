@@ -43,9 +43,9 @@ export default {
     return {
         
         dados:{
-          name: 'jota'
-          ,email: 'j@j.com'
-          ,mensagem: 'teste'
+          name: ''
+          ,email: ''
+          ,mensagem: ''
         }
 
     }
