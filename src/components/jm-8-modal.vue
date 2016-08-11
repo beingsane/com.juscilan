@@ -39,7 +39,7 @@ export default {
     methods:{
       ok(){
 
-          if(this.tipo === 'DOWNLOAD'){
+          if(getValue.tipo === 'DOWNLOAD'){
                 if(!this.senha)
                 return
 
