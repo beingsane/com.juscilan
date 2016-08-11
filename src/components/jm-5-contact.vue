@@ -4,7 +4,7 @@
       <div id="contato" class="section" >
           <div class="row">
             <div class="col s12 center" >
-                <h4>Contato</h4>
+                <h4>Formulário para contato</h4>
                 <form class="col s12" >
                   <div class="row">
                       <div class="input-field col s12">
