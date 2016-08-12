@@ -38,6 +38,7 @@ export const mutations = {
 
                 state.Modal={}
                 
+
           }
     },    
 }
