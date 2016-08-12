@@ -37,6 +37,7 @@ export const mutations = {
                 window.location = address
 
                 state.Modal={}
+                
           }
     },    
 }
