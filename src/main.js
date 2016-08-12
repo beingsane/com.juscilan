@@ -31,9 +31,7 @@ export const mutations = {
         
           if(obj.tipo === 'DOWNLOAD'){
 
-              console.log(state.Modal.senha)
-
-                
+                              
                 if(state.Modal.senha ==='')
                     return
 
