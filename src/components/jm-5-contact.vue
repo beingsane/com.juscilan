@@ -43,7 +43,7 @@ export default {
               actions:{
                   
                   executa : function ({dispatch}) {
-                      let data = JSON.parse(JSON.stringify(this.$data.data));
+                      let data = JSON.parse(JSON.stringify(this.$data));
                       dispatch('ATUALIZA_MODAL',data)
                       jQuery('#modal1').openModal();
                   }
@@ -53,23 +53,24 @@ export default {
 
   data () {
     return {
-
-        data:{
             titulo: ''
             ,mensagem :''
-            ,tipo :''
+            ,tipo :'WARNING'
             ,inputvisible:false
-        },
-        
-        dados:{
-          name: ''
-          ,email: ''
-          ,mensagem: ''
-          
+            ,senha:''
+            ,dados:{
+                name: ''
+                ,email: ''
+                ,mensagem: ''
+                }
+
         }
 
-    }
-  },
+    },
+
+    ready () {
+       
+    },
 
   methods:{
 
@@ -84,34 +85,37 @@ export default {
             }
 
         //Valida preenchimento
-        if(this.dados.name === "" || this.dados.email === "" || this.dados.mensagem === ""){
-            this.$data.data = {
+        if(this.$data.dados.name === "" || this.$data.dados.email === "" || this.$data.dados.mensagem === ""){
+            this.$data = {
                 titulo: 'Atenção'
                 ,mensagem :'Todos os campos são obrigatórios ;)'
                 ,tipo :'WARNING'
                 ,inputvisible:false
+                ,dados:this.$data.dados
             }
             this.executa()
             return;            
         }            
         
-        var dados = 'dados=' + JSON.stringify(this.dados);
+        var dados = 'dados=' + JSON.stringify(this.$data.dados);
 
         this.$http.post('/email',dados,config).then((response) => {
-            this.$data.data = {
+            this.$data = {
                 titulo: 'Mensagem enviada'
                 ,mensagem :'Logo, logo entro em contato ;)'
                 ,tipo :'WARNING'
                 ,inputvisible:false
+                ,dados:this.$data.dados
             }
             this.executa()
             
         }, (response) => {
-            this.$data.data = {
+            this.$data = {
                 titulo: 'Erro ao enviar'
                 ,mensagem :'Por gentileza tente novamente ;('
                 ,tipo :'WARNING'
                 ,inputvisible:false
+                ,dados:this.$data.dados
             }
             this.executa()
         });      

@@ -6,7 +6,7 @@
         <input id="senhaModal" v-show="getValue.inputvisible" autofocus type="password" v-model="senha" >
     </div>
     <div class="modal-footer">
-        <button id="closeModal" class="modal-action modal-close waves-effect waves-green btn" @click="ok($event)" >Ok</button>
+        <button id="closeModal" class="modal-action modal-close waves-effect waves-green btn" @click="ok()" >Ok</button>
     </div>
 </div>
 </template>
@@ -14,13 +14,15 @@
 <script>
 export default {
 
+    name:'modal'
+    ,
+
     vuex:{
 
               actions:{
                   
                   executa : function ({dispatch}) {
-                    
-                      this.$data.tipo = 'DOWNLOAD'
+                      this.$data.tipo = this.getValue.tipo
                       let data = JSON.parse(JSON.stringify(this.$data));
                       dispatch('OK_CLICK',data)
                   }
@@ -42,14 +44,11 @@ export default {
   },
 
     ready () {
-        this.senha = ''
         this.data = this.getValue 
     },
 
     methods:{
-      ok(event){
-
-          event.preventDefault()
+      ok(){
 
           this.executa()
           jQuery('#modal1').closeModal();

@@ -26,21 +26,17 @@ export const mutations = {
       state.Modal = obj
     },
     OK_CLICK (state, obj) {
-        state.Modal = obj
-
-        
+          state.Modal = obj
+          
           if(obj.tipo === 'DOWNLOAD'){
-
-                              
-                if(state.Modal.senha ==='')
-                    return
-
-                let address = "/arquivos/Juscilan_Moreto-11-98167-1595.pdf/" + obj.senha;
-
-                window.location = address
-
-                state.Modal.senha=''
                 
+                if(obj.senha === '')
+                    return
+                   
+                let address = "/arquivos/Juscilan_Moreto-11-98167-1595.pdf/" + obj.senha;
+                //window.location = address;
+                console.log('baixou')
+                state.Modal.senha =''
 
           }
     },    
