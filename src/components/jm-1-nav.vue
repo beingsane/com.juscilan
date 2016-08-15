@@ -15,7 +15,6 @@
         </ul>
       </div>
   </nav>   
-
 </template>
 
 <script>
@@ -23,41 +22,36 @@
 import {scroll} from './jm-9-scrool'
 
 export default {
-
     vuex:{
-              actions:{
-                  
-                  AbreModal : function ({dispatch}) {
-                      let data = JSON.parse(JSON.stringify(this.$data.modal));
-                      dispatch('ATUALIZA_MODAL',data)
-                      jQuery('#modal1').openModal();
-                  }
-              },
-                getters: {
-                    getValue : store => store.Modal
-                
-                }              
-
-   },
-
-  data () {
-    return {
-      modal:{
-        titulo: 'Atenção'
-        ,mensagem :'Por gentileza digite sua senha:'
-        ,tipo :'DOWNLOAD'
-        ,inputvisible:true
-        ,senha:''
-      }
-    }
-  },
-    ready () {
-        scroll("scrollSuave")
+      actions:{
+          AbreModal : function ({dispatch}) {
+              let data = JSON.parse(JSON.stringify(this.$data.modal));
+              dispatch('ATUALIZA_MODAL',data)
+              jQuery('#modal1').openModal();
+          }
+      },
+      getters: {
+          getValue : store => store.Modal
+      }              
     },
-    methods:{
-      baixar(){
-        jQuery('#modal1').openModal();
+    data () {
+      return {
+        modal:{
+          titulo: 'Atenção'
+          ,mensagem :'Por gentileza digite sua senha:'
+          ,tipo :'DOWNLOAD'
+          ,inputvisible:true
+          ,senha:''
+        }
       }
-    }  
+  },
+  ready () {
+      scroll("scrollSuave")
+  },
+  methods:{
+    baixar(){
+      jQuery('#modal1').openModal();
+    }
+  }  
 }
 </script>

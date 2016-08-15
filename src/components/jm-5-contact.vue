@@ -41,14 +41,13 @@
 export default {
 
     vuex:{
-              actions:{
-                  
-                  executa : function ({dispatch}) {
-                      let data = JSON.parse(JSON.stringify(this.$data));
-                      dispatch('ATUALIZA_MODAL',data)
-                      jQuery('#modal1').openModal();
-                  }
-              },
+        actions:{
+            executa : function ({dispatch}) {
+                let data = JSON.parse(JSON.stringify(this.$data));
+                dispatch('ATUALIZA_MODAL',data)
+                jQuery('#modal1').openModal();
+            }
+        },
 
    },
 
@@ -68,16 +67,11 @@ export default {
         }
 
     },
+    methods:{
 
-    ready () {
-       
-    },
-
-  methods:{
-
-    enviar(event){
+        enviar(event){
         
-        event.preventDefault()
+            event.preventDefault()
 
             var config = {
                 headers : {
@@ -85,43 +79,42 @@ export default {
                 }
             }
 
-        //Valida preenchimento
-        if(this.$data.dados.name === "" || this.$data.dados.email === "" || this.$data.dados.mensagem === ""){
-            this.$data = {
-                titulo: 'Atenção'
-                ,mensagem :'Todos os campos são obrigatórios ;)'
-                ,tipo :'WARNING'
-                ,inputvisible:false
-                ,dados:this.$data.dados
-            }
-            this.executa()
-            return;            
-        }            
+            if(this.$data.dados.name === "" || this.$data.dados.email === "" || this.$data.dados.mensagem === ""){
+                this.$data = {
+                    titulo: 'Atenção'
+                    ,mensagem :'Todos os campos são obrigatórios ;)'
+                    ,tipo :'WARNING'
+                    ,inputvisible:false
+                    ,dados:this.$data.dados
+                }
+                this.executa()
+                return;            
+            }            
         
-        var dados = 'dados=' + JSON.stringify(this.$data.dados);
+            var dados = 'dados=' + JSON.stringify(this.$data.dados);
 
-        this.$http.post('/email',dados,config).then((response) => {
-            this.$data = {
-                titulo: 'Mensagem enviada'
-                ,mensagem :'Logo, logo entro em contato ;)'
-                ,tipo :'WARNING'
-                ,inputvisible:false
-                ,dados:this.$data.dados
-            }
-            this.executa()
-            this.$data.dados = {}
-            
-        }, (response) => {
-            this.$data = {
-                titulo: 'Erro ao enviar'
-                ,mensagem :'Por gentileza tente novamente ;('
-                ,tipo :'WARNING'
-                ,inputvisible:false
-                ,dados:this.$data.dados
-            }
-            this.executa()
-        });      
+            this.$http.post('/email',dados,config).then((response) => {
+                this.$data = {
+                    titulo: 'Mensagem enviada'
+                    ,mensagem :'Logo, logo entro em contato ;)'
+                    ,tipo :'WARNING'
+                    ,inputvisible:false
+                    ,dados:this.$data.dados
+                }
+                this.executa()
+                this.$data.dados = {}
+                
+            }, (response) => {
+                this.$data = {
+                    titulo: 'Erro ao enviar'
+                    ,mensagem :'Por gentileza tente novamente ;('
+                    ,tipo :'WARNING'
+                    ,inputvisible:false
+                    ,dados:this.$data.dados
+                }
+                this.executa()
+            });      
+        }
     }
-  }
 }
 </script>

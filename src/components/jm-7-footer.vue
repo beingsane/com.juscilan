@@ -64,11 +64,6 @@ export default {
         counter: {}
         }
     },
-
-    methods: {
-
-    },  
-
     ready () {
 
         scroll("scrollSuave")

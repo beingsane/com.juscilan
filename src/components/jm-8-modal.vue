@@ -14,46 +14,37 @@
 <script>
 export default {
 
-    name:'modal'
-    ,
-
+    name:'modal',
     vuex:{
 
-              actions:{
-                  
-                  executa : function ({dispatch}) {
-                      this.$data.tipo = this.getValue.tipo
-                      let data = JSON.parse(JSON.stringify(this.$data));
-                      dispatch('OK_CLICK',data)
-                  }
-              },        
-                getters: {
-                    getValue : store => store.Modal
-                
-                }
+        actions:{
+            executa : function ({dispatch}) {
+                this.$data.tipo = this.getValue.tipo
+                let data = JSON.parse(JSON.stringify(this.$data));
+                dispatch('OK_CLICK',data)
             }
-  ,
-  data () {
-    return {
-      titulo: ''
-      ,mensagem: ''
-      ,tipo: ''
-      ,senha:''
-      ,inputvisible:true
-    }
-  },
-
+        },        
+        getters: {
+            getValue : store => store.Modal
+        }
+    },
+    data () {
+        return {
+        titulo: ''
+        ,mensagem: ''
+        ,tipo: ''
+        ,senha:''
+        ,inputvisible:true
+        }
+    },
     ready () {
         this.data = this.getValue 
     },
-
     methods:{
-      ok(){
-
-          this.executa()
-          jQuery('#modal1').closeModal();
-      }
+        ok(){
+            this.executa()
+            jQuery('#modal1').closeModal();
+        }
     }
-
 }
 </script>

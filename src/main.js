@@ -19,15 +19,14 @@ export const state = {
    Modal:{}
 }
 
-//Define duas matations (Aconselhável separar num arquivo a parte)
 export const mutations = {
 
     ATUALIZA_MODAL (state, obj) {
       state.Modal = obj
     },
-
     
     OK_CLICK (state, obj) {
+          
           state.Modal = obj
           
           if(obj.tipo === 'DOWNLOAD'){
@@ -38,7 +37,6 @@ export const mutations = {
                 let address = "/arquivos/Juscilan_Moreto-11-98167-1595.pdf/" + obj.senha;
                 window.location = address;
                 state.Modal.senha =''
-
           }
     },    
 }
@@ -59,6 +57,6 @@ new Vue({
   ,store:  new Vuex.Store({
                             state,
                             mutations,
-                            strict: true // impede que altere o state diretamente, retirar em produção (Afeta Performance)
+                            //strict: true 
                         })
 })
