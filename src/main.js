@@ -35,7 +35,6 @@ export const mutations = {
                    
                 let address = "/arquivos/Juscilan_Moreto-11-98167-1595.pdf/" + obj.senha;
                 window.location = address;
-                //console.log('baixou')
                 state.Modal.senha =''
 
           }
