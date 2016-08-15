@@ -108,6 +108,7 @@ export default {
                 ,dados:this.$data.dados
             }
             this.executa()
+            this.$data.dados = {}
             
         }, (response) => {
             this.$data = {
