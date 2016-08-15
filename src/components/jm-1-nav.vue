@@ -2,7 +2,7 @@
   <span id="forkongithub" class="hide-on-med-and-down"><a href="https://github.com/juscilan">Fork me on GitHub</a></span> 
   <nav class="white" id="nav">
       <div class="nav-wrapper container">
-        <a id="logo-container" href="/" class="brand-logo"><img src="/img/Foto.jpg" class="circle bordabranca" alt="Juscilan Moreto" title="Juscilan Moreto"></a>
+        <a id="logo-container" href="/" class="brand-logo"><img src="/img/Foto.JPG" class="circle bordabranca" alt="Juscilan Moreto" title="Juscilan Moreto"></a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
             <li><a href="#" @click="AbreModal()">Curriculum em PDF</a></li>
