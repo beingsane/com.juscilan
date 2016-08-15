@@ -5,6 +5,7 @@
           <div class="row">
             <div class="col s12 center" >
                 <h4>Formulário para contato</h4>
+                <h5><a class="black-text" href="mailto:juscilan@gmail.com">juscilan@gmail.com</a></h5>
                 <form class="col s12" >
                   <div class="row">
                       <div class="input-field col s12">
