@@ -74,7 +74,9 @@ export default {
         scroll("scrollSuave")
 
         this.$http.get('/counter').then((response) => {
-            this.$set('counter', JSON.parse(response.body));
+            let objRetorno = JSON.parse(response.body)
+            objRetorno.visitors = '000' +  objRetorno.visitors
+            this.$set('counter', objRetorno);
             
         }, (response) => {
             window.console.log('Erro ao realizar operação.');

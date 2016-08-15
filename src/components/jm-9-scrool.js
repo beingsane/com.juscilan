@@ -5,5 +5,6 @@ export const scroll = function(element){
                 scrollTop: jQuery( jQuery.attr(this, 'href') ).offset().top
             }, 1000);
             return false;
-        });        
+        });
+        jQuery('.button-collapse').sideNav('hide');        
     }  
