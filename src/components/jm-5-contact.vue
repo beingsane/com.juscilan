@@ -34,9 +34,7 @@
                          name="action">Enviar<i class="material-icons right">send</i>
                       </button>
                   </div>
-
                 </form>
-                <div class="center"><a class="black-text scrollSuave" href="#nav">Voltar ao topo</a></div>
             </div>
           </div>
       </div>
