@@ -1,6 +1,8 @@
 <template>
     <!-- Modal Structure -->
+   
     <div id="contato">
+    <br><br> 
       <div  class="section" >
           <div class="row">
             <div class="col s12 center" >
@@ -42,6 +44,9 @@
 </template>
 
 <script>
+
+import {scroll} from './jm-9-scrool'
+
 export default {
 
     vuex:{
@@ -54,21 +59,25 @@ export default {
         },
 
    },
+    ready () {
 
-  data () {
-    return {
-            titulo: ''
-            ,mensagem :''
-            ,tipo :'WARNING'
-            ,inputvisible:false
-            ,senha:''
-            ,dados:{
-                name: ''
-                ,email: ''
-                ,mensagem: ''
-                }
+        scroll("scrollSuave")
+    },   
 
-        }
+    data () {
+        return {
+                titulo: ''
+                ,mensagem :''
+                ,tipo :'WARNING'
+                ,inputvisible:false
+                ,senha:''
+                ,dados:{
+                    name: ''
+                    ,email: ''
+                    ,mensagem: ''
+                    }
+
+            }
 
     },
     methods:{
