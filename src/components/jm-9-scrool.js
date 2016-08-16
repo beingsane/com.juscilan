@@ -6,5 +6,4 @@ export const scroll = function(element){
             }, 1000);
             return false;
         });
-        jQuery('.button-collapse').sideNav('hide');        
     }  
