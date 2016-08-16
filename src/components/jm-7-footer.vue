@@ -6,12 +6,12 @@
                 <div class="col  s12">
                 <h5 id="sobre" class="white-text">Mais sobre mim...</h5>
                 <p class="grey-text text-lighten-4">
-                    Meu nome é Juscilan Moreto, sou graduado em Análise e desenvolvimento de 
-                    sistemas, ajudei a desenvolver e implantar softwares em grandes empresas como Carrefour, 
+                    Meu nome é Juscilan Moreto, sou graduado em Análise e Desenvolvimento de 
+                    Sistemas, ajudei a desenvolver e implantar softwares em grandes empresas como Carrefour, 
                     Alpargatas, Bematech, Leroy Merlin e PRODESP, possuo vasta experiência em testes, 
                     análise, modelagem, desenvolvimento dos mais variados tipos de sistemas. 
                     Focando no desenvolvimento de sistemas para Web/Intranet como Asp.NET MVC, C#, SqlServer e Oracle 
-                    e também tecnologias Full-Stack Javascript (MongoDB, Express.js, Vue.js e Node.js).
+                    e também tecnologias Javascript (MongoDB, Express.js, Vue.js e Node.js).
                 </p>
             </div> 
         </div>
@@ -24,7 +24,7 @@
         </div>
         <div class="footer-copyright">
             <div class="container">
-                <p class="center header col s12 light">Versão 3.0.0.0 - <span>{{counter.visitors}}</span> </p>
+                <p class="center header col s12 light">Versão 3.0.0.1 - <span>{{counter.visitors}}</span> </p>
             </div>
         </div>
         
@@ -50,7 +50,7 @@ export default {
 
         this.$http.get('/counter').then((response) => {
             let objRetorno = JSON.parse(response.body)
-            objRetorno.visitors = '000' +  objRetorno.visitors
+            objRetorno.visitors = ('00000' +  objRetorno.visitors).substring(2,8)
             this.$set('counter', objRetorno);
             
         }, (response) => {
