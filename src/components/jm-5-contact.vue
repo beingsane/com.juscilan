@@ -4,8 +4,7 @@
       <div id="contato" class="section" >
           <div class="row">
             <div class="col s12 center" >
-                <h4>Formulário para contato</h4>
-                <h5><a class="black-text" href="mailto:juscilan@gmail.com">juscilan@gmail.com</a></h5>
+                <h5>Formulário para contato:</h5>
                 <form class="col s12" >
                   <div class="row">
                       <div class="input-field col s12">
@@ -25,13 +24,17 @@
                         <label for="first_name">Mensagem</label>
                       </div>
                   </div>
+                  <div class="row">
+                      <h6><a class="black-text" href="mailto:juscilan@gmail.com">Ou pelo email: juscilan@gmail.com</a></h6>
+                  </div>
                   <div class="row"> 
                       <button @click="enviar($event)" class="btn waves-effect waves-light" 
                          name="action">Enviar<i class="material-icons right">send</i>
                       </button>
                   </div>
+
                 </form>
-                <div class="center"><a class="black-text scrollSuave" href="#nav">Topo</a></div>
+                <div class="center"><a class="black-text scrollSuave" href="#nav">Voltar ao topo</a></div>
             </div>
           </div>
       </div>

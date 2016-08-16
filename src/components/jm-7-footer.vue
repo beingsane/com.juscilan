@@ -16,7 +16,7 @@
             </div> 
         </div>
         <div>
-            <div class="center"><a class="white-text scrollSuave" href="#nav">Topo</a></div>
+            <div class="center"><a class="white-text scrollSuave" href="#nav">Voltar ao topo</a></div>
             <br>
             <br>
             <div class="center"><a class="white-text scrollSuave" >&copy; 2016 - juscilan.com</a></div>

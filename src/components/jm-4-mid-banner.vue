@@ -4,7 +4,7 @@
         <div class="section no-pad-bot">
           <div class="container">
               <div class="row center">
-                <h5 class="header col s12 light-image center">Html5, Css e Javascript</h5>
+                <h5 class="header col s12 light-image center">Html5, Css e JavaScript</h5>
               </div>
           </div>
         </div>
