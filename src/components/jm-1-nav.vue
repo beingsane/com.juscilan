@@ -10,8 +10,8 @@
             <li><a href="#sobre" class="scrollSuave">  Sobre</a></li>
         </ul>
         <ul class="side-nav" id="mobile-demo">
-            <li><a href="#contato">Contato</a></li>
-            <li><a href="#sobre">Sobre</a></li>
+            <li><a class="waves-effect waves-light" data-scroll="" href="#contato"><i class="material-icons left">email</i>Contato</a></li>
+            <li><a class="waves-effect waves-light" data-scroll="" href="#sobre"><i class="material-icons left">face</i>Sobre</a></li>
         </ul>
       </div>
   </nav>   
