@@ -1,43 +1,41 @@
 <template>
-    <!-- Modal Structure -->
-   
     <div id="contato">
-    <br><br> 
-      <div  class="section" >
-          <div class="row">
-            <div class="col s12 center" >
-                <h5>Formulário para contato:</h5>
-                <form class="col s12" >
-                  <div class="row">
-                      <div class="input-field col s12">
-                        <input id="name"  type="text" class="validate" v-model="dados.name">
-                        <label for="first_name">Nome</label>
-                      </div>
-                  </div>
-                  <div class="row">
-                      <div class="input-field col s12">
-                        <input id="email" type="text" class="validate" v-model="dados.email">
-                        <label for="email">Email</label>
-                      </div>
-                  </div>
-                  <div class="row">
-                      <div class="input-field col s12">
-                        <input id="mensagem" type="text" class="validate" v-model="dados.mensagem">
-                        <label for="first_name">Mensagem</label>
-                      </div>
-                  </div>
-                  <div class="row">
-                      <h6><a class="black-text" href="mailto:juscilan@gmail.com">Ou pelo email: juscilan@gmail.com</a></h6>
-                  </div>
-                  <div class="row"> 
-                      <button @click="enviar($event)" class="btn waves-effect waves-light" 
-                         name="action">Enviar<i class="material-icons right">send</i>
-                      </button>
-                  </div>
-                </form>
+        <br><br> 
+        <div  class="section" >
+            <div class="row">
+                <div class="col s12 center" >
+                    <h5>Formulário para contato:</h5>
+                    <form class="col s12" >
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="name"  type="text" class="validate" v-model="dados.name">
+                            <label for="first_name">Nome</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="email" type="text" class="validate" v-model="dados.email">
+                            <label for="email">Email</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="mensagem" type="text" class="validate" v-model="dados.mensagem">
+                            <label for="first_name">Mensagem</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <h6><a class="black-text" href="mailto:juscilan@gmail.com">Ou pelo email: juscilan@gmail.com</a></h6>
+                    </div>
+                    <div class="row"> 
+                        <button @click="enviar($event)" class="btn waves-effect waves-light" 
+                            name="action">Enviar<i class="material-icons right">send</i>
+                        </button>
+                    </div>
+                    </form>
+                </div>
             </div>
-          </div>
-      </div>
+        </div>
     </div>
 </template>
 
@@ -58,10 +56,8 @@ export default {
 
    },
     ready () {
-
         scroll("scrollSuave")
     },   
-
     data () {
         return {
                 titulo: ''
@@ -76,7 +72,6 @@ export default {
                     }
 
             }
-
     },
     methods:{
 

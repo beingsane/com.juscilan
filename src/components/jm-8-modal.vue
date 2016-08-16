@@ -1,17 +1,18 @@
 <template>
-<div id="modal1" class="modal">
-    <div class="modal-content">
-        <h4 >{{getValue.titulo}}</h4>
-        <p> {{getValue.mensagem}}</p>
-        <input id="senhaModal" v-show="getValue.inputvisible" autofocus type="password" v-model="senha" >
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h4 >{{getValue.titulo}}</h4>
+            <p> {{getValue.mensagem}}</p>
+            <input id="senhaModal" v-show="getValue.inputvisible" autofocus type="password" v-model="senha" >
+        </div>
+        <div class="modal-footer">
+            <button id="closeModal" class="modal-action modal-close waves-effect waves-green btn" @click="ok()" >Ok</button>
+        </div>
     </div>
-    <div class="modal-footer">
-        <button id="closeModal" class="modal-action modal-close waves-effect waves-green btn" @click="ok()" >Ok</button>
-    </div>
-</div>
 </template>
 
 <script>
+    
 export default {
 
     name:'modal',

@@ -24,7 +24,6 @@
                 <p class="center header col s12 light">Versão 3.0.0.1 - <span>{{counter.visitors}}</span> </p>
             </div>
         </div>
-        
     </footer>
 </template>
 
