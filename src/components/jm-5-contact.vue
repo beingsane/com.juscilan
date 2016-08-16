@@ -100,7 +100,7 @@ export default {
             this.$http.post('/email',dados,config).then((response) => {
                 this.$data = {
                     titulo: 'Mensagem enviada'
-                    ,mensagem :'Logo, logo entro em contato ;)'
+                    ,mensagem :'Logo, logo entro em contato :)'
                     ,tipo :'WARNING'
                     ,inputvisible:false
                     ,dados:this.$data.dados
@@ -111,7 +111,7 @@ export default {
             }, (response) => {
                 this.$data = {
                     titulo: 'Erro ao enviar'
-                    ,mensagem :'Por gentileza tente novamente ;('
+                    ,mensagem :'Por gentileza tente novamente :('
                     ,tipo :'WARNING'
                     ,inputvisible:false
                     ,dados:this.$data.dados
