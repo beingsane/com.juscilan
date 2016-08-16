@@ -1,7 +1,7 @@
 <template>
     <!-- Modal Structure -->
-    <div>
-      <div id="contato" class="section" >
+    <div id="contato">
+      <div  class="section" >
           <div class="row">
             <div class="col s12 center" >
                 <h5>Formulário para contato:</h5>

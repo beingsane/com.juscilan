@@ -1,7 +1,7 @@
 <template>
   <span id="forkongithub" class="hide-on-med-and-down"><a href="https://github.com/juscilan">Fork me on GitHub</a></span> 
-    <div class="navbar-fixed" id="nav">
-      <nav class="white" >
+  <div class="navbar-fixed" id="nav"> 
+    <nav class="white">
         <div class="nav-wrapper container">
           <a id="logo-container" href="/" class="brand-logo"><img src="/img/foto.jpg" class="circle bordabranca" alt="Juscilan Moreto" title="Juscilan Moreto"></a>
           <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
@@ -15,8 +15,8 @@
               <li><a @click="hide()" class="waves-effect waves-light scrollSuave" href="#sobre" ><i class="material-icons left">face</i>Sobre</a></li>
           </ul>
         </div>
-      </nav>   
-    </div>
+    </nav>
+  </div>   
 </template>
 
 <script>
