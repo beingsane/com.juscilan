@@ -33,10 +33,22 @@ export const mutations = {
                 
                 if(obj.senha === '')
                     return
-                   
-                let address = "/arquivos/Juscilan_Moreto-11-98167-1595.pdf/" + obj.senha;
-                window.location = address;
-                state.Modal.senha =''
+
+                Vue.http.get('/arquivos/' + obj.senha).then((response) => {
+                    let objRetorno = response.body
+                    
+                    if(objRetorno == 'Erro'){
+
+                        return
+                    }    
+
+                    let address = "/arquivos/Juscilan_Moreto-11-98167-1595.pdf/" + obj.senha;
+                    window.location = address;
+                    state.Modal.senha =''                   
+                    
+                }, (response) => {
+                    window.console.log('Erro ao realizar operação.');
+                });
           }
     },    
 }
