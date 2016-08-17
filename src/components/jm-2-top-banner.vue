@@ -17,7 +17,8 @@
     </div>
     <h5 class="header center teal-text text-lighten hide-on-med-and-down">"think before, then do."</h5>
     <h5 class="header center teal-text text-lighten hide-on-med-and-up">  
-      <i class="fa fa-whatsapp"></i> {{telefone}}
+      <i class="fa fa-whatsapp"></i> 
+      <a href="tel:{{telefone}}">{{telefone}}</a>
       <br>
       <i id="angle-down" class="fa fa-angle-down black-text" style="font-size:48px" > </i>
     </h5>        
