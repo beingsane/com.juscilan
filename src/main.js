@@ -39,7 +39,14 @@ export const mutations = {
                     
                     if(objRetorno == 'Erro'){
 
-                        return
+                        state.Modal.titulo =  'Atenção'
+                        state.Modal.mensagem ='A senha digitada é inválida :('
+                        state.Modal.tipo ='WARNING'
+                        state.Modal.inputvisible=false
+
+                        jQuery('#modal1').openModal();
+                        
+                        //return
                     }    
 
                     let address = "/arquivos/Juscilan_Moreto-11-98167-1595.pdf/" + obj.senha;
