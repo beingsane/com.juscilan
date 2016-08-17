@@ -34,19 +34,26 @@ export const mutations = {
                 if(obj.senha === '')
                     return
 
-                Vue.http.get('/arquivos/' + obj.senha).then((response) => {
-                    let objRetorno = response.body
-                    
-                    if(objRetorno == 'Erro'){
+
+                    state.Modal.executa = function(){
+
 
                         state.Modal.titulo =  'Atenção'
                         state.Modal.mensagem ='A senha digitada é inválida :('
                         state.Modal.tipo ='WARNING'
                         state.Modal.inputvisible=false
 
-                        jQuery('#modal1').openModal();
-                        
-                        //return
+                        jQuery('#modal1').openModal();                        
+
+
+                    }
+
+                Vue.http.get('/arquivos/' + obj.senha).then((response) => {
+                    let objRetorno = response.body
+                    
+                    if(objRetorno == 'Erro'){
+                        state.Modal.executa()     
+                        return
                     }    
 
                     let address = "/arquivos/Juscilan_Moreto-11-98167-1595.pdf/" + obj.senha;
