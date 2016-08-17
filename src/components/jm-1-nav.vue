@@ -13,6 +13,7 @@
           </ul>
           <ul class="side-nav" id="mobile-demo">
               <li><a @click="hide()" class="waves-effect waves-light scrollSuave" href="#nav" ><i class="material-icons left">store</i>Home</a></li>
+              <li><a @click="AbreModal()" class="waves-effect waves-light scrollSuave" href="#" ><i class="material-icons left">assignment_ind</i>Curriculum</a></li>
               <li><a @click="hide()" class="waves-effect waves-light scrollSuave" href="#contato" ><i class="material-icons left">email</i>Contato</a></li>
               <li><a @click="hide()" class="waves-effect waves-light scrollSuave" href="#sobre" ><i class="material-icons left">face</i>Sobre</a></li>
           </ul>
