@@ -1,6 +1,6 @@
 <template>
     <h5 class="header center teal-text text-lighten hide-on-med-and-down">  
-      <i class="fa fa-whatsapp"></i> {{telefone}}
+      <i class="fa fa-whatsapp"></i> <a href="tel:{{telefone}}">{{telefone}}</a>
     </h5>
     <div id="index-banner" class="parallax-container">
         <div class="section no-pad-bot">
