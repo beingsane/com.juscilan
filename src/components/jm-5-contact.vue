@@ -85,6 +85,17 @@ export default {
                 }
             }
 
+
+            if(this.$data.dados.name === "" || this.$data.dados.email === "" || this.$data.dados.mensagem === ""){
+                this.$data = {
+                    titulo: 'Atenção'
+                    ,mensagem :'Todos os campos são obrigatórios ;)'
+                    ,tipo :'WARNING'
+                    ,inputvisible:false
+                    ,dados:this.$data.dados
+                }
+            }
+
             var er = /^[a-zA-Z0-9][a-zA-Z0-9\._-]+@([a-zA-Z0-9\._-]+\.)[a-zA-Z-0-9]{2}/;
             if(!er.exec(this.$data.dados.email ))
 	        {
@@ -94,34 +105,31 @@ export default {
                 return false;        
             }
 
-            if(this.$data.dados.name === "" || this.$data.dados.email === "" || this.$data.dados.mensagem === ""){
-                
-                this.$data.titulo   = 'Atenção'
-                this.$data.mensagem ='Todos os campos são obrigatórios ;)'
-                this.$data.dados    = this.$data.dados
-                
-                this.executa()
-                return;            
-            }            
         
             var dados = 'dados=' + JSON.stringify(this.$data.dados);
 
             this.$http.post('/email',dados,config).then((response) => {
 
-                console.log(response)
-                
-                this.$data.titulo   =  'Mensagem enviada!'
-                this.$data.mensagem = 'Logo, logo entro em contato ;)'
-                this.$data.dados    = this.$data.dados                
-                
+                this.$data = {
+                    titulo: 'Mensagem enviada'
+                    ,mensagem :'Logo, logo entro em contato :)'
+                    ,tipo :'WARNING'
+                    ,inputvisible:false
+                    ,dados:this.$data.dados
+                }
+
                 this.executa()
                 this.$data.dados = {}
                 
             }, (response) => {
 
-                this.$data.titulo   = 'Erro ao enviar'
-                this.$data.mensagem ='Por gentileza tente novamente :('
-                this.$data.dados    =this.$data.dados  
+                this.$data = {
+                    titulo: 'Erro ao enviar'
+                    ,mensagem :'Por gentileza tente novamente :('
+                    ,tipo :'WARNING'
+                    ,inputvisible:false
+                    ,dados:this.$data.dados
+                }
 
                 this.executa()
             });      
@@ -129,3 +137,5 @@ export default {
     }
 }
 </script>
+
+            
