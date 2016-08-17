@@ -49,6 +49,7 @@ export default {
         actions:{
             executa : function ({dispatch}) {
                 let data = JSON.parse(JSON.stringify(this.$data));
+
                 dispatch('ATUALIZA_MODAL',data)
                 jQuery('#modal1').openModal();
             }
@@ -85,52 +86,43 @@ export default {
                 }
             }
 
-
             if(this.$data.dados.name === "" || this.$data.dados.email === "" || this.$data.dados.mensagem === ""){
-                this.$data = {
-                    titulo: 'Atenção'
-                    ,mensagem :'Todos os campos são obrigatórios ;)'
-                    ,tipo :'WARNING'
-                    ,inputvisible:false
-                    ,dados:this.$data.dados
-                }
+                
+                this.$data.titulo = 'Atencao'
+                this.$data.mensagem ='Todos os campos são obrigatórios ;)'
+
+                this.executa()
+
+                return
             }
 
-/*
             var er = /^[a-zA-Z0-9][a-zA-Z0-9\._-]+@([a-zA-Z0-9\._-]+\.)[a-zA-Z-0-9]{2}/;
             if(!er.exec(this.$data.dados.email ))
 	        {
                 this.$data.titulo   = 'Atenção'
-                this.$data.mensagem ='Email inválido :('
-                $('#modal1').openModal();
-                return false;        
-            }*/
+                this.$data.mensagem ='Formato de Email inválido :('
+                this.executa()                
+
+                return        
+            }
 
         
             var dados = 'dados=' + JSON.stringify(this.$data.dados);
 
             this.$http.post('/email',dados,config).then((response) => {
 
-                this.$data = {
-                    titulo: 'Mensagem enviada'
-                    ,mensagem :'Logo, logo entro em contato :)'
-                    ,tipo :'WARNING'
-                    ,inputvisible:false
-                    ,dados:this.$data.dados
-                }
+                this.$data.titulo = 'Mensagem enviada!'
+                this.$data.mensagem ='Logo, logo entro em contato :)'
 
                 this.executa()
                 this.$data.dados = {}
                 
             }, (response) => {
 
-                this.$data = {
-                    titulo: 'Erro ao enviar'
-                    ,mensagem :'Por gentileza tente novamente :('
-                    ,tipo :'WARNING'
-                    ,inputvisible:false
-                    ,dados:this.$data.dados
-                }
+
+                this.$data.titulo   = 'Erro ao enviar'
+                this.$data.mensagem ='Por gentileza tente novamente :('
+                this.$data.dados    = this.$data.dados
 
                 this.executa()
             });      
