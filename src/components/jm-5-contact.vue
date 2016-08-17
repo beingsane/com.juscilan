@@ -96,6 +96,7 @@ export default {
                 }
             }
 
+/*
             var er = /^[a-zA-Z0-9][a-zA-Z0-9\._-]+@([a-zA-Z0-9\._-]+\.)[a-zA-Z-0-9]{2}/;
             if(!er.exec(this.$data.dados.email ))
 	        {
@@ -103,7 +104,7 @@ export default {
                 this.$data.mensagem ='Email inválido :('
                 $('#modal1').openModal();
                 return false;        
-            }
+            }*/
 
         
             var dados = 'dados=' + JSON.stringify(this.$data.dados);
