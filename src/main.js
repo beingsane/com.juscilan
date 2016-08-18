@@ -57,7 +57,9 @@ export const mutations = {
 
                 let address = "/arquivos/Juscilan_Moreto-11-98167-1595.pdf/" + obj.senha;
                 window.location = address;
-                state.Modal.senha =''                   
+                state.Modal.senha ='' 
+                state.Modal.tipo        =   'WARNING'
+                jQuery('#modal1').closeModal();                  
                     
                 }, (response) => {
                     window.console.log('Erro ao realizar operação.');
