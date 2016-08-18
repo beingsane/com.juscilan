@@ -19,21 +19,15 @@ export const state = {
    Modal:{}
 }
 
-
 export const mutations = {
 
     ATUALIZA_MODAL (state, obj) {
       state.Modal = obj
     },
     
-    OK_CLICK (state, obj) {
+    OK_CLICK_MODAL (state, obj) {
 
-        
-          
         state.Modal = obj
-
-
-
 
         if(obj.tipo === 'DOWNLOAD'){
             
@@ -49,9 +43,9 @@ export const mutations = {
                     state.Modal.titulo      =  'Atenção'
                     state.Modal.mensagem    =   'A senha digitada é inválida :('
                     state.Modal.tipo        =   'WARNING'
+                    state.Modal.senha ='' 
                     state.Modal.inputvisible=   false
-                    state.Modal.showmessage = true
-                    
+
                     return
                 }    
 

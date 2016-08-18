@@ -119,10 +119,8 @@ export default {
                 
             }, (response) => {
 
-
                 this.$data.titulo   = 'Erro ao enviar'
                 this.$data.mensagem ='Por gentileza tente novamente :('
-                this.$data.dados    = this.$data.dados
 
                 this.executa()
             });      

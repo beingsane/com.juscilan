@@ -22,8 +22,7 @@ export default {
             executa : function ({dispatch}) {
                 this.$data.tipo = this.getValue.tipo
                 let data = JSON.parse(JSON.stringify(this.$data));
-                dispatch('OK_CLICK',data)
-                //jQuery('#modal1').closeModal();
+                dispatch('OK_CLICK_MODAL',data)
             }
         },        
         getters: {
@@ -37,17 +36,14 @@ export default {
         ,tipo: ''
         ,senha:''
         ,inputvisible:true
-        ,showmessage:false
         }
     },
     ready () {
         this.data = this.getValue 
-
     },
     methods:{
         ok(){
             this.executa()
-            //jQuery('#modal1').closeModal();
         }
     }
 }
