@@ -11,8 +11,8 @@ import JmFootBanner from './components/jm-6-foot-banner.vue'
 import JmFooter     from './components/jm-7-footer.vue'
 import JmModal      from './components/jm-8-modal.vue'
 
-import {state}        from './vuex/state'
-import {mutations}        from './vuex/mutations'
+import {state}      from './vuex/state'
+import {mutations}  from './vuex/mutations'
 
 Vue.use(VueResource)
 Vue.use(Vuex)
