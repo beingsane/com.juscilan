@@ -16,13 +16,8 @@
         </div>
         <div>
             <br>
+            <p class="center header col s12 white-text">Versão 3.0.0.1 - <span>{{counter.visitors}}</span> </p>
             <div class="center"><a class="white-text scrollSuave" >&copy; 2016 - juscilan.com</a></div>
-            
-        </div>
-        <div class="footer-copyright">
-            <div class="container">
-                <p class="center header col s12 light">Versão 3.0.0.1 - <span>{{counter.visitors}}</span> </p>
-            </div>
         </div>
     </footer>
 </template>

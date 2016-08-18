@@ -46,7 +46,7 @@ export default {
     methods:{
         ok(){
             this.executa()
-            jQuery('#modal1').closeModal();
+            //jQuery('#modal1').closeModal();
         }
     }
 }

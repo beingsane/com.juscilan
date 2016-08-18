@@ -26,6 +26,8 @@ export const mutations = {
     },
     
     OK_CLICK (state, obj) {
+
+        jQuery('#modal1').closeModal();
           
         state.Modal = obj
         state.Modal.executa = function(){
