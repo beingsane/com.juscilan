@@ -19,6 +19,7 @@ export const state = {
    Modal:{}
 }
 
+
 export const mutations = {
 
     ATUALIZA_MODAL (state, obj) {
@@ -27,7 +28,7 @@ export const mutations = {
     
     OK_CLICK (state, obj) {
 
-        jQuery('#modal1').closeModal();
+        
           
         state.Modal = obj
         state.Modal.executa = function(){
@@ -45,12 +46,12 @@ export const mutations = {
             if(obj.senha === '')
                 return
 
-
             Vue.http.get('/arquivos/' + obj.senha).then((response) => {
                 
                 let objRetorno = response.body
                 
                 if(objRetorno == 'Erro'){
+                    //npopen();
                     alert('Senha inválida.')
                     return
                 }    
