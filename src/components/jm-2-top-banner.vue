@@ -20,7 +20,7 @@
       <i class="fa fa-whatsapp"></i> 
       <a href="tel:{{telefone}}">{{telefone}}</a>
       <br>
-      <i id="angle-down" class="fa fa-angle-down black-text" style="font-size:48px" > </i>
+      <i id="angle-down" class="fa fa-angle-down black-text " style="font-size:48px" > </i>
     </h5>        
 </template>
 

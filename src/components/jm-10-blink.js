@@ -3,9 +3,8 @@ export const blink = function(element){
    var count = 0;
    
    do {
-        $('#' + element).fadeOut(500).fadeIn(500)
+        $('#' + element).fadeIn(500).fadeOut(500)
         count++
    }while(count < 10)
    
-   $('#' + element).hide()    
 }  

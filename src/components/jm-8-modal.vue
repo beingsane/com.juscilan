@@ -26,7 +26,7 @@ export default {
             }
         },        
         getters: {
-            getValue : store => store.Modal
+            getValue : store => store.Modal,
         }
     },
     data () {
@@ -36,10 +36,12 @@ export default {
         ,tipo: ''
         ,senha:''
         ,inputvisible:true
+        ,showmessage:false
         }
     },
     ready () {
         this.data = this.getValue 
+
     },
     methods:{
         ok(){

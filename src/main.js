@@ -9,7 +9,7 @@ import JmMidBanner  from './components/jm-4-mid-banner.vue'
 import JmContact    from './components/jm-5-contact.vue'
 import JmFootBanner from './components/jm-6-foot-banner.vue'
 import JmFooter     from './components/jm-7-footer.vue'
-import Modal        from './components/jm-8-modal.vue'
+import JmModal        from './components/jm-8-modal.vue'
 
 Vue.use(VueResource)
 Vue.use(Vuex)
@@ -27,43 +27,40 @@ export const mutations = {
     
     OK_CLICK (state, obj) {
           
-          state.Modal = obj
-          
-          if(obj.tipo === 'DOWNLOAD'){
+        state.Modal = obj
+        state.Modal.executa = function(){
+
+            state.Modal.titulo      =  'Atenção'
+            state.Modal.mensagem    =   'A senha digitada é inválida :('
+            state.Modal.tipo        =   'WARNING'
+            state.Modal.inputvisible=   false
+            state.Modal.showmessage = true
+
+        }
+
+        if(obj.tipo === 'DOWNLOAD'){
+            
+            if(obj.senha === '')
+                return
+
+
+            Vue.http.get('/arquivos/' + obj.senha).then((response) => {
                 
-                if(obj.senha === '')
+                let objRetorno = response.body
+                
+                if(objRetorno == 'Erro'){
+                    alert('Senha inválida.')
                     return
+                }    
 
-
-                    state.Modal.executa = function(){
-
-
-                        state.Modal.titulo =  'Atenção'
-                        state.Modal.mensagem ='A senha digitada é inválida :('
-                        state.Modal.tipo ='WARNING'
-                        state.Modal.inputvisible=false
-
-                        jQuery('#modal1').openModal();                        
-
-
-                    }
-
-                Vue.http.get('/arquivos/' + obj.senha).then((response) => {
-                    let objRetorno = response.body
-                    
-                    if(objRetorno == 'Erro'){
-                        state.Modal.executa()     
-                        return
-                    }    
-
-                    let address = "/arquivos/Juscilan_Moreto-11-98167-1595.pdf/" + obj.senha;
-                    window.location = address;
-                    state.Modal.senha =''                   
+                let address = "/arquivos/Juscilan_Moreto-11-98167-1595.pdf/" + obj.senha;
+                window.location = address;
+                state.Modal.senha =''                   
                     
                 }, (response) => {
                     window.console.log('Erro ao realizar operação.');
-                });
-          }
+            });
+        }
     },    
 }
 
@@ -77,7 +74,7 @@ new Vue({
                   ,JmContact
                   ,JmFootBanner
                   ,JmFooter
-                  ,Modal        
+                  ,JmModal        
               }
   
   ,store:  new Vuex.Store({
