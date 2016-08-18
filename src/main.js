@@ -9,7 +9,8 @@ import JmMidBanner  from './components/jm-4-mid-banner.vue'
 import JmContact    from './components/jm-5-contact.vue'
 import JmFootBanner from './components/jm-6-foot-banner.vue'
 import JmFooter     from './components/jm-7-footer.vue'
-import JmModal      from './components/jm-8-modal.vue'
+
+import JmModal      from './components/common/jm-modal.vue'
 
 import {state}      from './vuex/state'
 import {mutations}  from './vuex/mutations'

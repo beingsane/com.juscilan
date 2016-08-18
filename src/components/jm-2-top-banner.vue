@@ -26,7 +26,7 @@
 
 <script>
 
-import {blink} from './jm-10-blink'
+import {blink} from './common/jm-blink'
 
 export default {
   data () {
