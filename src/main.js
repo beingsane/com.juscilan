@@ -31,8 +31,14 @@ export const mutations = {
 
         if(obj.tipo === 'DOWNLOAD'){
             
-            if(obj.senha === '')
+            if(obj.senha === ''){
+                state.Modal.titulo      =  'Atenção'
+                state.Modal.mensagem    =   'A senha é obrigatória :('
+                state.Modal.tipo        =   'WARNING'
+                state.Modal.inputvisible=   false            
+
                 return
+            }
 
             Vue.http.get('/arquivos/' + obj.senha).then((response) => {
                 
