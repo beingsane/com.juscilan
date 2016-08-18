@@ -88,7 +88,7 @@ export default {
 
             if(this.$data.dados.name === "" || this.$data.dados.email === "" || this.$data.dados.mensagem === ""){
                 
-                this.$data.titulo = 'Atencao'
+                this.$data.titulo = 'Atencão'
                 this.$data.mensagem ='Todos os campos são obrigatórios ;)'
 
                 this.executa()
@@ -99,8 +99,8 @@ export default {
             var er = /^[a-zA-Z0-9][a-zA-Z0-9\._-]+@([a-zA-Z0-9\._-]+\.)[a-zA-Z-0-9]{2}/;
             if(!er.exec(this.$data.dados.email ))
 	        {
-                this.$data.titulo   = 'Atenção'
-                this.$data.mensagem ='Formato de Email inválido :('
+                this.$data.titulo   =   'Atenção'
+                this.$data.mensagem =   'Formato de Email inválido :('
                 this.executa()                
 
                 return        
@@ -111,16 +111,16 @@ export default {
 
             this.$http.post('/email',dados,config).then((response) => {
 
-                this.$data.titulo = 'Mensagem enviada!'
-                this.$data.mensagem ='Logo, logo entro em contato :)'
+                this.$data.titulo   =   'Mensagem enviada!'
+                this.$data.mensagem =   'Logo, logo entro em contato :)'
 
                 this.executa()
                 this.$data.dados = {}
                 
             }, (response) => {
 
-                this.$data.titulo   = 'Erro ao enviar'
-                this.$data.mensagem ='Por gentileza tente novamente :('
+                this.$data.titulo   =   'Erro ao enviar'
+                this.$data.mensagem =   'Por gentileza tente novamente :('
 
                 this.executa()
             });      

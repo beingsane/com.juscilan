@@ -9,7 +9,7 @@
                         Sistemas, ajudei a desenvolver e implantar softwares em grandes empresas como Carrefour, 
                         Alpargatas, Bematech, Leroy Merlin e PRODESP, possuo vasta experiência em análise, modelagem, desenvolvimento dos mais variados tipos de sistemas. 
                         Focando no desenvolvimento de sistemas para Web/Intranet como Asp.NET MVC, C#, SqlServer e Oracle 
-                        e também tecnologias Javascript (MongoDB, Express.js, Vue.js e Node.js).
+                        e também tecnologias JavaScript (MongoDB, Express.js, Vue.js e Node.js).
                     </p>
                 </div> 
             </div>
