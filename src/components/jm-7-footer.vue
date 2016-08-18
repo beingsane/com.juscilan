@@ -14,11 +14,13 @@
                 </div> 
             </div>
         </div>
+        <a href="#nav" class="scrollSuave">
         <div class="footer-copyright">
             <div class="container">
-                &copy; 2016 - juscilan.com
+                <span class="grey-text text-lighten-4 left" >&copy; 2016 - juscilan.com</span>
                 <span class="grey-text text-lighten-4 right" >Versão 3.0.0.2 - <span>{{counter.visitors}}</span>
             </div>
+            </a>
         </div>
     </footer>
 </template>
