@@ -31,15 +31,9 @@ export const mutations = {
         
           
         state.Modal = obj
-        state.Modal.executa = function(){
 
-            state.Modal.titulo      =  'Atenção'
-            state.Modal.mensagem    =   'A senha digitada é inválida :('
-            state.Modal.tipo        =   'WARNING'
-            state.Modal.inputvisible=   false
-            state.Modal.showmessage = true
 
-        }
+
 
         if(obj.tipo === 'DOWNLOAD'){
             
@@ -51,8 +45,13 @@ export const mutations = {
                 let objRetorno = response.body
                 
                 if(objRetorno == 'Erro'){
-                    //npopen();
-                    alert('Senha inválida.')
+                    
+                    state.Modal.titulo      =  'Atenção'
+                    state.Modal.mensagem    =   'A senha digitada é inválida :('
+                    state.Modal.tipo        =   'WARNING'
+                    state.Modal.inputvisible=   false
+                    state.Modal.showmessage = true
+                    
                     return
                 }    
 
@@ -63,6 +62,10 @@ export const mutations = {
                 }, (response) => {
                     window.console.log('Erro ao realizar operação.');
             });
+        }
+
+        else if(obj.tipo === 'WARNING'){
+            jQuery('#modal1').closeModal();
         }
     },    
 }
