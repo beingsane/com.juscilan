@@ -12,11 +12,11 @@ export const mutations = {
         if(obj.tipo === 'DOWNLOAD'){
             
             if(obj.senha === ''){
-                state.Modal.titulo      =  'Atenção'
-                state.Modal.mensagem    =   'A senha é obrigatória :('
-                state.Modal.tipo        =   'WARNING'
-                state.Modal.inputvisible=   false
-                state.Modal.btnokvisible=   false 
+                state.Modal.titulo          =   'Atenção'
+                state.Modal.mensagem        =   'A senha é obrigatória :('
+                state.Modal.tipo            =   'WARNING'
+                state.Modal.inputvisible    =   false
+                state.Modal.btnokvisible    =   false 
 
                 setTimeout(function(){ 
                     jQuery('#modal1').closeModal();
@@ -31,12 +31,12 @@ export const mutations = {
                 
                 if(objRetorno == 'Erro'){
                     
-                    state.Modal.titulo      =  'Atenção'
-                    state.Modal.mensagem    =   'A senha digitada é inválida :('
-                    state.Modal.tipo        =   'WARNING'
-                    state.Modal.senha ='' 
-                    state.Modal.inputvisible=   false
-                    state.Modal.btnokvisible=   false  
+                    state.Modal.titulo          =   'Atenção'
+                    state.Modal.mensagem        =   'A senha digitada é inválida :('
+                    state.Modal.tipo            =   'WARNING'
+                    state.Modal.senha           =   '' 
+                    state.Modal.inputvisible    =   false
+                    state.Modal.btnokvisible    =   false  
 
                     setTimeout(function(){ 
                         jQuery('#modal1').closeModal();
@@ -45,10 +45,9 @@ export const mutations = {
                     return
                 }    
 
-                let address = "/arquivos/Juscilan_Moreto-11-98167-1595.pdf/" + obj.senha;
-                window.location = address;
-                state.Modal.senha ='' 
-                state.Modal.tipo        =   'WARNING'
+                window.location     =   "/arquivos/Juscilan_Moreto-11-98167-1595.pdf/" + obj.senha
+                state.Modal.senha   =   '' 
+                state.Modal.tipo    =   'WARNING'
                 jQuery('#modal1').closeModal();                  
                     
                 }, (response) => {
