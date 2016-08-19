@@ -1,10 +1,11 @@
+
 export const mutations = {
 
     ATUALIZA_MODAL (state, obj) {
       state.Modal = obj
     },
     
-    OK_CLICK_MODAL (state, obj) {
+    OK_CLICK_MODAL (state, obj, Vue) {
 
         state.Modal = obj
 
@@ -14,12 +15,13 @@ export const mutations = {
                 state.Modal.titulo      =  'Atenção'
                 state.Modal.mensagem    =   'A senha é obrigatória :('
                 state.Modal.tipo        =   'WARNING'
-                state.Modal.inputvisible=   false            
+                state.Modal.inputvisible=   false
+                state.Modal.btnokvisible=   false    
 
                 return
             }
 
-            Vue.http.get('/arquivos/' + obj.senha).then((response) => {
+            Vue.$http.get('/arquivos/' + obj.senha).then((response) => {
                 
                 let objRetorno = response.body
                 
@@ -30,6 +32,7 @@ export const mutations = {
                     state.Modal.tipo        =   'WARNING'
                     state.Modal.senha ='' 
                     state.Modal.inputvisible=   false
+                    state.Modal.btnokvisible=   false  
 
                     return
                 }    

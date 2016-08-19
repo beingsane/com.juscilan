@@ -52,6 +52,10 @@ export default {
 
                 dispatch('ATUALIZA_MODAL',data)
                 jQuery('#modal1').openModal();
+
+                setTimeout(function(){ 
+                    jQuery('#modal1').closeModal();
+                }, 1500);
             }
         },
 
@@ -88,8 +92,9 @@ export default {
 
             if(this.$data.dados.name === "" || this.$data.dados.email === "" || this.$data.dados.mensagem === ""){
                 
-                this.$data.titulo = 'Atencão'
+                this.$data.titulo = 'Atenção'
                 this.$data.mensagem ='Todos os campos são obrigatórios ;)'
+                this.$data.btnokvisible = false
 
                 this.executa()
 
@@ -101,6 +106,8 @@ export default {
 	        {
                 this.$data.titulo   =   'Atenção'
                 this.$data.mensagem =   'Formato de Email inválido :('
+                this.$data.btnokvisible = false
+
                 this.executa()                
 
                 return        
@@ -113,6 +120,7 @@ export default {
 
                 this.$data.titulo   =   'Mensagem enviada!'
                 this.$data.mensagem =   'Logo, logo entro em contato :)'
+                this.$data.btnokvisible = false                
 
                 this.executa()
                 this.$data.dados = {}
@@ -121,6 +129,7 @@ export default {
 
                 this.$data.titulo   =   'Erro ao enviar'
                 this.$data.mensagem =   'Por gentileza tente novamente :('
+                this.$data.btnokvisible = false                
 
                 this.executa()
             });      

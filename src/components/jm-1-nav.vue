@@ -16,7 +16,7 @@
           
           <ul class="side-nav" id="mobile-demo">
               <li><a @click="hide()" class="waves-effect waves-light scrollSuave" href="#nav" ><i class="material-icons left">store</i>Home</a></li>
-              <li><a @click="AbreModal();hide()" class="waves-effect waves-light scrollSuave" href="#nav" ><i class="material-icons left">assignment_ind</i>Currículo PDF</a></li>
+              <li><a @click="AbreModal()" class="waves-effect waves-light scrollSuave" href="#nav" ><i class="material-icons left">assignment_ind</i>Currículo PDF</a></li>
               <li><a @click="hide()" class="waves-effect waves-light scrollSuave" href="#contato" ><i class="material-icons left">email</i>Contato</a></li>
               <li><a @click="hide()" class="waves-effect waves-light scrollSuave" href="#sobre" ><i class="material-icons left">face</i>Sobre</a></li>
           </ul>
@@ -37,6 +37,14 @@ export default {
               dispatch('ATUALIZA_MODAL',data)
               jQuery('#modal1').openModal();
               jQuery('.button-collapse').sideNav('hide');
+
+
+              if(this.getValue.modal.btnokvisible === false){
+                setTimeout(function(){ 
+                    jQuery('#modal1').closeModal();
+                }, 1500); 
+              }
+             
           }
       },
       getters: {
@@ -51,6 +59,7 @@ export default {
           ,tipo :'DOWNLOAD'
           ,inputvisible:true
           ,senha:''
+          ,btnokvivible:true
         }
       }
   },
