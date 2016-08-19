@@ -5,6 +5,10 @@ export const mutations = {
       state.Modal = obj
     },
     
+    UPDATE_LOADER (state, obj) {
+      state.Loader = obj
+    },
+
     OK_CLICK_MODAL (state, obj, Vue) {
 
         state.Modal = obj

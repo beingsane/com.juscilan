@@ -1,9 +1,9 @@
 <template>
-    <footer id="qq" class="page-footer teal">
+    <footer id="sobre" class="page-footer teal">
         <div class="container">
             <div class="row">
                 <div>
-                    <h5 id="sobre" class="white-text">Mais sobre mim...</h5>
+                    <h5 class="white-text">Mais sobre mim...</h5>
                     <p class="grey-text text-lighten-4">
                         Meu nome é Juscilan Moreto, sou graduado em Análise e Desenvolvimento de 
                         Sistemas, ajudei a desenvolver e implantar softwares em grandes empresas como Carrefour, 

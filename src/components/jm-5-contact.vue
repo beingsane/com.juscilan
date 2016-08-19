@@ -56,9 +56,12 @@ export default {
                 setTimeout(function(){ 
                     jQuery('#modal1').closeModal();
                 }, 1500);
-            }
+            },
+            loader : function ({dispatch},data) {
+                
+                dispatch('UPDATE_LOADER',data)
+            }            
         },
-
    },
     ready () {
         scroll("scrollSuave")
@@ -114,9 +117,12 @@ export default {
             }
 
         
+            this.loader({visible:true})
+
             var dados = 'dados=' + JSON.stringify(this.$data.dados);
 
             this.$http.post('/email',dados,config).then((response) => {
+
 
                 this.$data.titulo   =   'Mensagem enviada!'
                 this.$data.mensagem =   'Logo, logo entro em contato :)'
@@ -124,6 +130,8 @@ export default {
 
                 this.executa()
                 this.$data.dados = {}
+                
+                this.loader({visible:false})
                 
             }, (response) => {
 
