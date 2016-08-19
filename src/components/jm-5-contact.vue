@@ -140,6 +140,8 @@ export default {
                 this.$data.btnokvisible = false                
 
                 this.executa()
+
+                this.loader({visible:false})
             });      
         }
     }

@@ -1,6 +1,6 @@
 <template>
     <div v-show="getValue.visible" class="center">
-        <img src="/img/loading.gif" alt="Loading" title="Loafing">        
+        <img src="/img/loading.gif" alt="Loading" title="Loading">        
     </div>
 </template>
 
@@ -20,7 +20,7 @@ export default {
 
     data () {
         return {
-            visible:true
+            visible:false
         }
     },
 }
