@@ -18,6 +18,11 @@ import {mutations}  from './vuex/mutations'
 Vue.use(VueResource)
 Vue.use(Vuex)
 
+let store = new Vuex.Store({
+                            state,
+                            mutations,
+                            //strict: true 
+                        })
 
 new Vue({
   el: 'body',
@@ -32,9 +37,5 @@ new Vue({
                   ,JmModal        
               }
   
-  ,store:  new Vuex.Store({
-                            state,
-                            mutations,
-                            //strict: true 
-                        })
+  ,store: store
 })
