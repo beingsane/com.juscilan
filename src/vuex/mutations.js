@@ -16,7 +16,11 @@ export const mutations = {
                 state.Modal.mensagem    =   'A senha é obrigatória :('
                 state.Modal.tipo        =   'WARNING'
                 state.Modal.inputvisible=   false
-                state.Modal.btnokvisible=   false    
+                state.Modal.btnokvisible=   false 
+
+                setTimeout(function(){ 
+                    jQuery('#modal1').closeModal();
+                }, 1500);                    
 
                 return
             }
@@ -33,6 +37,10 @@ export const mutations = {
                     state.Modal.senha ='' 
                     state.Modal.inputvisible=   false
                     state.Modal.btnokvisible=   false  
+
+                    setTimeout(function(){ 
+                        jQuery('#modal1').closeModal();
+                    }, 1500);                      
 
                     return
                 }    

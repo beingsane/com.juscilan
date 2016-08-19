@@ -38,13 +38,6 @@ export default {
               jQuery('#modal1').openModal();
               jQuery('.button-collapse').sideNav('hide');
 
-
-              if(this.getValue.modal.btnokvisible === false){
-                setTimeout(function(){ 
-                    jQuery('#modal1').closeModal();
-                }, 1500); 
-              }
-             
           }
       },
       getters: {
@@ -59,7 +52,7 @@ export default {
           ,tipo :'DOWNLOAD'
           ,inputvisible:true
           ,senha:''
-          ,btnokvivible:true
+          ,btnokvisible:true
         }
       }
   },
