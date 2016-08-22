@@ -72,7 +72,6 @@ gulp.task('minimiza-html', function() {
 
 
 gulp.task('default', function (done) {
-    //return runSequence('concatena-css', 'minifica-css', 'cjs','rhtml','mhtml', done);
     return runSequence(
       'concatena-css'
     , 'minifica-css'

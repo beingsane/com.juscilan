@@ -36,7 +36,6 @@ export default {
   },
   ready(){
     blink('angle-down')
-    //jQuery('#angle-down').blink();
   }
 }
 </script>

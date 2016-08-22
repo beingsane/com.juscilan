@@ -10,12 +10,3 @@
       <div class="parallax"><img src="/img/meio.jpg" alt=""></div>
   </div>
 </template>
-
-<script>
-export default {
-  data () {
-    return {
-    }
-  }
-}
-</script>
