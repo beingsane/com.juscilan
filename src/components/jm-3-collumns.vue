@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div id="collumns" class="container">
     <div class="section">
       <div class="row">
           <div class="col s12 m4">

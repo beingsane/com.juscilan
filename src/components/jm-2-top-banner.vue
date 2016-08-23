@@ -1,4 +1,5 @@
 <template>
+  <div id="topbanner">
     <h5 class="header center teal-text text-lighten hide-on-med-and-down">  
       <i class="fa fa-whatsapp"></i> <a href="tel:{{telefone}}">{{telefone}}</a>
     </h5>
@@ -21,9 +22,12 @@
       <a href="tel:{{telefone}}">{{telefone}}</a>
       <br>
       <div v-show="anglevisible">
-        <i id="angle-down" class="fa fa-angle-down black-text " style="font-size:48px" > </i>
+        <a href="#collumns" class="scrollSuave">
+          <i id="angle-down" class="fa fa-angle-down black-text " style="font-size:48px" > </i>
+        </a>
       </div>
-    </h5>        
+    </h5> 
+   <div>        
 </template>
 
 <script>
