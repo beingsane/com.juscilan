@@ -7,7 +7,7 @@
             </div>
         </div>
       </div>
-      <div class="parallax"><img src="/img/rodape.jpg" alt=""></div>
+      <div class="parallax"><img src="/img/rodape.jpg" alt="Node.js, Asp.NET MVC, Python ..."></div>
   </div>
 </template>
 

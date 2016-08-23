@@ -7,6 +7,6 @@
             </div>
         </div>
       </div>
-      <div class="parallax"><img src="/img/meio.jpg" alt=""></div>
+      <div class="parallax"><img src="/img/meio.jpg" alt="HTML, CSS e JavaScript"></div>
   </div>
 </template>
