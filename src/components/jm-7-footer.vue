@@ -18,7 +18,7 @@
         <div class="footer-copyright">
             <div class="container">
                 <span class="grey-text text-lighten-4 left" >&copy; 2016 - juscilan.com</span>
-                <span class="grey-text text-lighten-4 right" >Versão 3.0.0.2 - <span>{{counter.visitors}}</span>
+                <span class="grey-text text-lighten-4 right" >Versão {{versao}} - <span>{{counter.visitors}}</span>
             </div>
             </a>
         </div>
@@ -36,6 +36,7 @@ export default {
     data () {
     return {
         counter: {}
+        , versao:'3.0.1.2'
         }
     },
     ready () {
