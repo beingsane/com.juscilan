@@ -35,30 +35,24 @@
 import {blink}      from './common/jm-blink'
 import {scrolltop}  from './common/jm-scroll'
 
-
 export default {
   data () {
     return {
-      telefone:'11 98167-1595'
-      , anglevisible:true
+        telefone:'11 98167-1595'
+        ,anglevisible:true
     }
   },
   ready(){
     
     blink('angle-down')
 
-    let self = this
-
     scrolltop((top)=>{
-      if(top > 50){
-          this.$data.anglevisible=false  
-      }else{
-          this.$data.anglevisible=true
-      }
-        
+        if(top > 50){
+            this.$data.anglevisible=false  
+        }else{
+            this.$data.anglevisible=true
+        }
     })
-
-
   }
 }
 </script>
