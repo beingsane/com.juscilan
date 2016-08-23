@@ -20,22 +20,41 @@
       <i class="fa fa-whatsapp"></i> 
       <a href="tel:{{telefone}}">{{telefone}}</a>
       <br>
-      <i id="angle-down" class="fa fa-angle-down black-text " style="font-size:48px" > </i>
+      <div v-show="anglevisible">
+        <i id="angle-down" class="fa fa-angle-down black-text " style="font-size:48px" > </i>
+      </div>
     </h5>        
 </template>
 
 <script>
 
-import {blink} from './common/jm-blink'
+import {blink}      from './common/jm-blink'
+import {scrolltop}  from './common/jm-scroll'
+
 
 export default {
   data () {
     return {
       telefone:'11 98167-1595'
+      , anglevisible:true
     }
   },
   ready(){
+    
     blink('angle-down')
+
+    let self = this
+
+    scrolltop((top)=>{
+      if(top > 50){
+          this.$data.anglevisible=false  
+      }else{
+          this.$data.anglevisible=true
+      }
+        
+    })
+
+
   }
 }
 </script>

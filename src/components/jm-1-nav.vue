@@ -27,7 +27,7 @@
 
 <script>
 
-import {scroll} from './common/jm-scrool'
+import {scroll} from './common/jm-scroll'
 
 export default {
     vuex:{
