@@ -17,8 +17,8 @@
         <a href="#nav" class="scrollSuave">
         <div class="footer-copyright">
             <div class="container">
-                <span class="grey-text text-lighten-4 left" >&copy; 2016 - juscilan.com</span>
-                <span class="grey-text text-lighten-4 right" >Versão {{versao}} - <span>{{counter.visitors}}</span>
+                <span class="grey-text text-lighten-4 left" >&copy; 2016 - juscilan.com </span>
+                <span class="grey-text text-lighten-4 right" >Versão {{versao}}         </span>
             </div>
             </a>
         </div>
@@ -40,17 +40,7 @@ export default {
         }
     },
     ready () {
-
         scroll("scrollSuave")
-
-        this.$http.get('/counter').then((response) => {
-            let objRetorno = JSON.parse(response.body)
-            objRetorno.visitors = ('00000' +  objRetorno.visitors).substring(2,8)
-            this.$set('counter', objRetorno);
-            
-        }, (response) => {
-            window.console.log('Erro ao realizar operação.');
-        });
     }
 }
 </script>
