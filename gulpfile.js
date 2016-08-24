@@ -12,14 +12,14 @@ var del = require('del');
 
 gulp.task('concatena-css', function() {
   return gulp.src('./css/_source/*.css')
-    .pipe(concat('app.con.css'))
+    .pipe(concat('app.min.css'))
     .pipe(gulp.dest('./css/dest-con/'));
 });
 
 gulp.task('minifica-css', function() {
   return gulp.src('./css/dest-con/*.css')
     .pipe(minifyCss({compatibility: 'ie8'}))
-    .pipe(gulp.dest('./css/dest-min/'));
+    .pipe(gulp.dest('./css/dest-min'));
 });
 
 gulp.task('apaga-jpg', function () {
