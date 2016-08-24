@@ -1,13 +1,12 @@
-var gulp = require('gulp');
-
-var concat = require('gulp-concat');
-var minifyCss = require('gulp-minify-css');
-var minifyHTML = require('gulp-minify-html');
+var gulp        = require('gulp');
+var concat      = require('gulp-concat');
+var minifyCss   = require('gulp-minify-css');
+var minifyHTML  = require('gulp-minify-html');
 var htmlreplace = require('gulp-html-replace');
-var uglify = require('gulp-uglify');
-var order = require("gulp-order");
+var uglify      = require('gulp-uglify');
+var order       = require("gulp-order");
 var runSequence = require('run-sequence');
-var del = require('del');
+var del         = require('del');
  
 
 gulp.task('concatena-css', function() {
@@ -27,7 +26,6 @@ gulp.task('apaga-jpg', function () {
     './js/_source/*.jpg',
   ]);
 });
-
 
 gulp.task('concatena-js', function() {
   return gulp.src('./js/_source/*.js')
