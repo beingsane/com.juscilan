@@ -34,9 +34,9 @@ export default {
     name:'footer-component',
 
     data () {
-    return {
-        counter: {}
-        , versao:'3.0.1.2'
+        return {
+            counter: {}
+            , versao:'3.0.1.4'
         }
     },
     ready () {
