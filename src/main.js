@@ -39,5 +39,5 @@ new Vue({
                   ,JmModal        
               }
   
-  ,store: store
+  ,store
 })
